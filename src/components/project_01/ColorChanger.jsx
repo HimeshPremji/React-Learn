@@ -6,7 +6,7 @@ function ColorChanger() {
   return (
     <div
       style={{ backgroundColor: color }}
-      className="flex h-screen w-screen items-center justify-center"
+      className="relative flex min-h-[90vh] w-screen items-center justify-center overflow-hidden"
     >
       <div className="absolute bottom-12 mx-4 flex flex-wrap items-center justify-center gap-2 rounded-lg bg-amber-50 p-4 shadow-lg">
         <button

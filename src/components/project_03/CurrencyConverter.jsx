@@ -34,55 +34,53 @@ function CurrencyConverter() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-900 to-black">
-      <div className="w-full">
-        <div className="border-gray-60 mx-auto w-full max-w-md rounded-lg border bg-white/30 p-5 backdrop-blur-sm">
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              convert();
-            }}
-          >
-            <div className="mb-1 w-full">
-              <InputBox
-                className="text-black"
-                label="From"
-                amount={amount}
-                currencyOptions={options}
-                onCurrencyChange={(currency) => setFrom(currency)}
-                selectCurrency={from}
-                onAmountChange={(amount) => setAmount(amount)}
-                amountDisable
-              />
-            </div>
-            <div className="relative h-0.5 w-full">
-              <button
-                type="button"
-                className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-white bg-blue-600 px-2 py-0.5 text-white"
-                onClick={swap}
-              >
-                swap
-              </button>
-            </div>
-            <div className="mt-1 mb-4 w-full">
-              <InputBox
-                className="text-black"
-                label="To"
-                amount={convertedAmount}
-                currencyOptions={options}
-                onCurrencyChange={(currency) => setTo(currency)}
-                selectCurrency={to}
-                amountDisable
-              />
-            </div>
+    <div className="flex h-[94.3vh] items-center justify-center overflow-hidden bg-gradient-to-r from-blue-900 to-black">
+      <div className="border-gray-60 mx-auto w-full max-w-md rounded-lg border bg-white/30 p-5 backdrop-blur-sm">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            convert();
+          }}
+        >
+          <div className="mb-1 w-full">
+            <InputBox
+              className="text-black"
+              label="From"
+              amount={amount}
+              currencyOptions={options}
+              onCurrencyChange={(currency) => setFrom(currency)}
+              selectCurrency={from}
+              onAmountChange={(amount) => setAmount(amount)}
+              amountDisable
+            />
+          </div>
+          <div className="relative h-0.5 w-full">
             <button
-              type="submit"
-              className="w-full rounded-lg bg-blue-600 px-4 py-3 text-white"
+              type="button"
+              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-white bg-blue-600 px-2 py-0.5 text-white"
+              onClick={swap}
             >
-              Convert {from.toUpperCase()} to {to.toUpperCase()}
+              swap
             </button>
-          </form>
-        </div>
+          </div>
+          <div className="mt-1 mb-4 w-full">
+            <InputBox
+              className="text-black"
+              label="To"
+              amount={convertedAmount}
+              currencyOptions={options}
+              onCurrencyChange={(currency) => setTo(currency)}
+              selectCurrency={to}
+              amountDisable
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-blue-600 px-4 py-3 text-white"
+          >
+            Convert {from.toUpperCase()} to {to.toUpperCase()}
+          </button>
+        </form>
       </div>
     </div>
   );

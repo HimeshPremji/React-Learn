@@ -39,7 +39,7 @@ function PasswordGenerator() {
   }, [generatePassword]);
 
   return (
-    <div className="mt-12 px-4 text-center font-sans sm:px-6 lg:px-8">
+    <div className="mt-12 h-80 px-4 text-center sm:px-6 lg:px-8">
       <h1 className="mb-8 text-3xl font-bold">Password Generator</h1>
       <div className="mb-5 flex items-center justify-center">
         <label className="mr-3">Password Length {length}</label>
