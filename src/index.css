@@ -7,5 +7,3 @@
 }
 
 @variant dark (&:where(.dark, .dark *));
-
-@config "../../../path/to/my/tailwind.config.js";

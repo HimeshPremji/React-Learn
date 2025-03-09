@@ -5,19 +5,16 @@ function Github() {
 
   return (
     <div className="relative flex min-h-[90vh] w-screen flex-col items-center justify-center bg-white p-6 text-center dark:bg-[#121212]">
-      {/* Profile Picture */}
       <img
         src={data?.avatar_url || ""}
         alt="Profile"
         className="mb-4 h-32 w-32 rounded-full shadow-lg"
       />
 
-      {/* Username */}
       <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100">
         {data?.name || "No Name"}
       </h1>
 
-      {/* GitHub Handle */}
       <a
         href={data?.html_url}
         target="_blank"
@@ -27,14 +24,12 @@ function Github() {
         @{data?.login}
       </a>
 
-      {/* Bio */}
       {data?.bio && (
         <p className="mt-2 text-lg text-gray-600 dark:text-gray-300">
           {data?.bio}
         </p>
       )}
 
-      {/* Stats */}
       <div className="mt-4 flex space-x-6 text-lg">
         <p className="font-semibold text-gray-800 dark:text-gray-200">
           🔥 Followers:{" "}

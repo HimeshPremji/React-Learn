@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import DarkModeToggle from "./DarkModeToggle";
 
-export default function Header() {
+export default function Header(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -29,14 +29,8 @@ export default function Header() {
           <div
             className={`${isOpen ? "block" : "hidden"} w-full lg:block lg:w-auto`}
           >
-            <ul className="mt-4 flex flex-col lg:mt-0 lg:flex-row lg:space-x-8">
-              {[
-                { name: "Home", path: "/" },
-                { name: "Project 01", path: "/color-changer" },
-                { name: "Project 02", path: "/password-generator" },
-                { name: "Project 03", path: "/currency-converter" },
-                { name: "Project 04", path: "/github" },
-              ].map((item) => (
+            <ul className="mt-4 flex flex-col lg:mt-0 lg:flex-row lg:space-x-1">
+              {props.navigationalData.map((item) => (
                 <li key={item.path}>
                   <NavLink
                     to={item.path}
